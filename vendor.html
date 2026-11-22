@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vendor Portal - Local Market Online Store</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+body{
+background:#f4f4f4;
+}
+nav{
+background:#1b5e20;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+}
+nav a{
+color:white;
+text-decoration:none;
+font-weight: bold;
+background: #2e7d32;
+padding: 8px 15px;
+border-radius: 5px;
+}
+nav a:hover{
+background: #388e3c;
+}
+.container{
+max-width: 600px;
+margin: 40px auto;
+background: white;
+padding: 30px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h2{
+color: #1b5e20;
+margin-bottom: 20px;
+text-align: center;
+}
+form{
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+label{
+font-weight: bold;
+color: #333;
+}
+input, select{
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 15px;
+}
+button{
+background: #1b5e20;
+color: white;
+padding: 12px;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+font-weight: bold;
+}
+button:hover{
+background: #2e7d32;
+}
+footer{
+background:#1b5e20;
+color:white;
+padding:15px;
+text-align:center;
+position: fixed;
+bottom: 0;
+width: 100%;
+}
+</style>
+</head>
+<body>
+
+<nav>
+<h2>🏬 Vendor Registration & Management Portal</h2>
+<a href="index.html">⬅️ Back to Customer Store</a>
+</nav>
+
+<div class="container">
+<h2>Register New Store & Product</h2>
+<!-- Required fields lagaye hain taaki bina bhare submit na ho -->
+<form onsubmit="registerVendor(event)">
+<label>Store / Business Name:</label>
+<input type="text" id="vStore" placeholder="e.g. Gupta General Store" required>
+
+<label>Vendor Owner Name:</label>
+<input type="text" id="vOwner" placeholder="e.g. Ramesh Gupta" required>
+
+<label>Product Category:</label>
+<select id="vCategory" required>
+<option value="">Select Category</option>
+<option value="Groceries">Groceries & Staples</option>
+<option value="Dairy">Dairy & Milk Products</option>
+<option value="Fruits">Fresh Fruits & Vegetables</option>
+<option value="Bakery">Bakery & Snacks</option>
+</select>
+
+<label>Item to List:</label>
+<input type="text" id="vItem" placeholder="e.g. Organic Tur Dal (1kg)" required>
+
+<label>Price (₹):</label>
+<input type="number" id="vPrice" placeholder="e.g. 120" required>
+
+<button type="submit">Register & Publish Product</button>
+</form>
+</div>
+
+<footer>
+<p>&copy; 2026 Local Market Online Store | Vendor Panel</p>
+</footer>
+
+<script>
+function registerVendor(event){
+event.preventDefault();
+let store = document.getElementById("vStore").value;
+let item = document.getElementById("vItem").value;
+alert("Success! Store '" + store + "' has successfully listed '" + item + "' online.");
+// Form reset kar do
+event.target.reset();
+}
+</script>
+</body>
+</html>
